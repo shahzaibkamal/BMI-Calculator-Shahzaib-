@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
-import  'icon_file.dart';
-import 'Container_file.dart';
-class RepeatContainerCode extends StatelessWidget {
-  const RepeatContainerCode({
-    super.key,
-    required this.color,
-    this.cardWidget = const SizedBox(),
-  });
+import 'constantFile.dart';
+import 'package:flutter/material.dart';
 
-  final Color color;
+class ContainerRepeated extends StatelessWidget {
+  final Color colors;
   final Widget cardWidget;
+  final VoidCallback onPressed; // Correct type for onPressed
+
+  ContainerRepeated({
+    required this.colors,
+    required this.cardWidget,
+    required this.onPressed, // Declaring onPressed as required
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(15.0),
-      child: cardWidget, // Ensuring the widget is not null
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(10.0),
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        margin: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          color: colors,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: cardWidget,
       ),
     );
   }
