@@ -6,6 +6,7 @@ import 'container_file.dart';
 import 'icon_file.dart';
 import 'constantFile.dart'; // Corrected import
 import 'resultFile.dart';
+import 'calculatorFile.dart';
 
 enum Gender {
   male,
@@ -236,27 +237,6 @@ class _InputPageState extends State<InputPage> {
 }
 
 
-class RoundIcon extends StatelessWidget {
-  RoundIcon({required this.iconData, required this.onPress});
-
-  final IconData iconData;
-  final VoidCallback onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(iconData),
-      onPressed: onPress,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        height: 56.0,
-        width: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
-    );
-  }
-}
 
 
 
