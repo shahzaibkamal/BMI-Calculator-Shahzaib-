@@ -1,5 +1,10 @@
 # bmi_calculator
 
+Watch Complete BMI  App videos... Create a BMI Calculator.
+Start video Number 56 then moren then 16 videos to complete
+BMI calculator Created ( Developed).
+Link for BMI Playlist : https://www.youtube.com/playlist?list=PLGJPpb8f27YY-gBqVlUbWNz3Eo5IplFlT
+
 A new Flutter project.
 
 ## Getting Started
