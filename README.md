@@ -1,7 +1,7 @@
 # bmi_calculator
 
 A new Flutter project.
-some errors set with the help of ChatGPT   :)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
