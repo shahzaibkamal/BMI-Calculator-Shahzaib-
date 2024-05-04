@@ -1,8 +1,12 @@
 import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_file.dart';
 import 'icon_file.dart';
+import 'constantFile.dart'; // Corrected import
+import 'resultFile.dart';
+import 'calculatorFile.dart';
 
 enum Gender {
   male,
@@ -108,152 +112,6 @@ class _InputPageState extends State<InputPage> {
               ), onPressed: () {  },
             ),
           ),
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: ContainerRepeated(
-                    colors: Color(0xFF111328),
-                    cardWidget: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget> [
-                        Text(
-                          'WEIGHT',
-                          style: kLabelStyle,
-                        ),
-                        Text(
-                          sliderWeight.toString(),
-                          style: kLabelStyle,
-
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            RoundIcon(iconData: FontAwesomeIcons.minus,
-                              onPress: (){
-                                setState(() {
-                                  sliderWeight--;
-                                });
-                              },
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ) ,
-                            RoundIcon(iconData: FontAwesomeIcons.plus,
-                              onPress: (){
-                                setState(() {
-                                  sliderWeight++;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                Expanded(
-                  child: ContainerRepeated(
-                    colors: Color(0xFF111328),
-                    cardWidget: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget> [
-                        Text(
-                          'Age',
-                          style: kLabelStyle,
-                        ),
-                        Text(
-                          sliderAge.toString(),
-                          style: kLabelStyle,
-
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            RoundIcon(iconData: FontAwesomeIcons.minus,
-                              onPress: (){
-                                setState(() {
-                                  sliderAge--;
-                                });
-                              },
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ) ,
-                            RoundIcon(iconData: FontAwesomeIcons.plus,
-                              onPress: (){
-                                setState(() {
-                                  sliderAge++;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: (){
-              CalculatorBrain  calc= CalculatorBrain(height: sliderHeight,weight: sliderWeight);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultScreen(
-                    bmiResult: calc.calculateBMI(),
-                    resultText: calc.getResult(),
-                    interpretation: calc.getInterpretation(), // Use getInterpretation here
-                  ),
-                ),
-              );
-
-
-            },
-            child: Container(
-              child: Center(
-                child: Text('Calculate',
-                  style: klargeButtons,),
-              ),
-
-              color: Color(0xFFEB1555),
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: 80.0,
-            ),),
-
-        ],
-      ),
-    );
-  }
-}
-
-
-class RoundIcon extends StatelessWidget {
-  RoundIcon({required this.iconData, required this.onPress});
-
-  final IconData iconData;
-  final VoidCallback onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(iconData),
-      onPressed: onPress,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        height: 56.0,
-        width: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
-    );
-  }
-}
 
 
 
