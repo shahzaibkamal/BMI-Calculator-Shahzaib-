@@ -1,7 +1,5 @@
 # bmi_calculator
 
-fix some errors help of the ChatGPT
-
 A new Flutter project.
 
 ## Getting Started
