@@ -1,118 +1,88 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Importing FontAwesomeIcons
-import  'icon_file.dart';
-import 'Container_file.dart';
-import 'main.dart';
-class _MyHomePageState extends State<MyHomePage> {
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'container_file.dart';
+import 'icon_file.dart';
+import 'constantFile.dart'; // Corrected import
+
+
+enum Gender {
+  male,
+  female,
+}
+
+class InputPage extends StatefulWidget {
+  @override
+  _InputPageState createState() => _InputPageState();
+}
+
+class _InputPageState extends State<InputPage> {
+  Gender selectedGender = Gender.male; // Initialized to Gender.male
+  int sliderHeight = 180;
+  int sliderWeight = 60;
+  int sliderAge = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('BMI CALCULATOR'),
       ),
       body: Column(
-        children: [
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
           Expanded(
             child: Row(
-              children: [
+              children: <Widget>[
                 Expanded(
-                  child: RepeatContainerCode(
-                    color: const Color(0xFF1D1E33), // Corrected parameter name
-                    cardWidget: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.male,
-                          color: Colors.white, // Ensure icon appears in white
-                          size: 80.0,
-                        ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
-                        Text(
-                          'Male',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white, // Ensure text appears in white
-                          ),
-                        ),
-                      ],
+                  child: ContainerRepeated(
+                    onPressed: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    cardWidget: RepeatedIcon(
+                      color: selectedGender == Gender.male ? activeColor : deactiveColor,
+                      iconData: FontAwesomeIcons.male,
+                      label: 'Male',
                     ),
+                    colors: selectedGender == Gender.male ? activeColor : deactiveColor,
                   ),
                 ),
                 Expanded(
-                  child: RepeatContainerCode(
-                    color: const Color(0xFF1D1E33),
-                    cardWidget: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.female,
-                          color: Colors.white, // Ensure icon appears in white
-                          size: 80.0,
-                        ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
-                        Text(
-                          'Female',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white, // Ensure text appears in white
-                          ),
-                        ),
-                      ],
+                  child: ContainerRepeated(
+                    onPressed: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    cardWidget: RepeatedIcon(
+                      color: selectedGender == Gender.female ? activeColor : deactiveColor,
+                      iconData: FontAwesomeIcons.female,
+                      label: 'Female',
                     ),
+                    colors: selectedGender == Gender.female ? activeColor : deactiveColor,
                   ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: RepeatContainerCode(
-              color: const Color(0xFF1D1E33),
-              cardWidget: const Center(
-                child: Text(
-                  "HEIGHT",
-                  style: TextStyle(
-                    color: Colors.white, // Ensuring text appears in white
+            child: ContainerRepeated(
+              colors: Color(0xFF1D1E33),
+              cardWidget: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Height',
+                    style: kLabelStyle,
                   ),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: RepeatContainerCode(
-                    color: const Color(0xFF1D1E33),
-                    cardWidget: Text(
-                      "                        WEIGHT",
-                      style: TextStyle(
-                        height: 15.0,
-                        color: Colors.white, // Ensuring text appears in white
+                  Row(
+
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        sliderHeight.toString(),
+                        style: TextStyle(
+                          fontSize: 35.0,
+                          fontWeight: FontWeight.w900,
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: RepeatContainerCode(
-                    color: const Color(0xFF1D1E33),
-                    cardWidget: Text(
-                      "                          AGE",
-                      style: TextStyle(
-                        height: 15.0,
-                        color: Colors.white, // Ensuring text appears in white
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
