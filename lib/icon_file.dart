@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_file.dart';
@@ -65,24 +67,3 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
-            child: ContainerRepeated(
-              colors: Color(0xFF1D1E33),
-              cardWidget: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Height',
-                    style: kLabelStyle,
-                  ),
-                  Row(
-
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        sliderHeight.toString(),
-                        style: TextStyle(
-                          fontSize: 35.0,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
