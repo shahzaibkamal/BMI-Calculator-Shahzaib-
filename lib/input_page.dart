@@ -7,7 +7,6 @@ import 'icon_file.dart';
 import 'constantFile.dart'; // Corrected import
 import 'resultFile.dart';
 
-
 enum Gender {
   male,
   female,
@@ -110,5 +109,95 @@ class _InputPageState extends State<InputPage> {
     ),
     ],
     ), onPressed: () {  },
+    ),
+    ),
+    Expanded(
+    child: Row(
+    children: <Widget>[
+    Expanded(
+    child: ContainerRepeated(
+    colors: Color(0xFF111328),
+    cardWidget: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget> [
+    Text(
+    'WEIGHT',
+    style: kLabelStyle,
+    ),
+    Text(
+    sliderWeight.toString(),
+    style: kLabelStyle,
+
+    ),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+    RoundIcon(iconData: FontAwesomeIcons.minus,
+    onPress: (){
+    setState(() {
+    sliderWeight--;
+    });
+    },
+    ),
+    SizedBox(
+    width: 10.0,
+    ) ,
+    RoundIcon(iconData: FontAwesomeIcons.plus,
+    onPress: (){
+    setState(() {
+    sliderWeight++;
+    });
+    },
+    ),
+    ],
+    ),
+    ],
+    ),
+    onPressed: () {},
+    ),
+    ),
+    Expanded(
+    child: ContainerRepeated(
+    colors: Color(0xFF111328),
+    cardWidget: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget> [
+    Text(
+    'Age',
+    style: kLabelStyle,
+    ),
+    Text(
+    sliderAge.toString(),
+    style: kLabelStyle,
+
+    ),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+    RoundIcon(iconData: FontAwesomeIcons.minus,
+    onPress: (){
+    setState(() {
+    sliderAge--;
+    });
+    },
+    ),
+    SizedBox(
+    width: 10.0,
+    ) ,
+    RoundIcon(iconData: FontAwesomeIcons.plus,
+    onPress: (){
+    setState(() {
+    sliderAge++;
+    });
+    },
+    ),
+    ],
+    ),
+    ],
+    ),
+    onPressed: () {},
+    ),
+    ),
+    ],
     ),
     ),
