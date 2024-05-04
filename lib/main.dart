@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title), // Using the title from the widget
+        title: Text(widget.title),
       ),
       body: Column(
         children: [
@@ -42,60 +42,47 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: RepeatContainerCode(colors: const Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: RepeatContainerCode(colors: const Color(0xFF1D1E33)),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: const Color(0xFF1D1E33),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
+            child: RepeatContainerCode(colors: const Color(0xFF1D1E33)),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: RepeatContainerCode(colors: const Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: RepeatContainerCode(colors: const Color(0xFF1D1E33)),
                 ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class RepeatContainerCode extends StatelessWidget {
+  const RepeatContainerCode({required this.colors});
+
+  final Color colors; // Using `final` or just removing `const` from constructor
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: colors,
+        borderRadius: BorderRadius.circular(10.0),
       ),
     );
   }
