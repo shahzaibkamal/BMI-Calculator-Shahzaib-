@@ -1,7 +1,9 @@
-import 'package:bmi/constantFile.dart';
+
+import 'package:bmi_calculator/constantFile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'constantFile.dart';
 import 'container_file.dart';
 
 class RepeatedIcon extends StatelessWidget {

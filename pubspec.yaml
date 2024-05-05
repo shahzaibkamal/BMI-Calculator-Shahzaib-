@@ -1,16 +1,12 @@
 name: bmi_calculator
-description: "A simple BMI Calculator app built with Flutter."
-# This line prevents the package from being accidentally published to pub.dev.
-publish_to: 'none'
+description: "A simple Flutter project."
+publish_to: 'none' # Prevents accidental publication to pub.dev
 
-# Version and build number for the application.
 version: 1.0.0+1
 
-# Environment settings.
 environment:
-  sdk: '>=3.3.0 <4.0.0' # Compatible Dart SDK version range
+  sdk: '>=3.3.2 <4.0.0' # Compatible Dart SDK version range
 
-# List of dependencies your project requires to work.
 dependencies:
   flutter:
     sdk: flutter
@@ -18,25 +14,21 @@ dependencies:
   cupertino_icons: ^1.0.6 # iOS-style icons
   font_awesome_flutter: ^10.7.0 # Font Awesome icons for Flutter
 
-# List of development dependencies (for testing, linting, etc.)
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0 # Recommended linting rules for Flutter projects
+  flutter_lints: ^3.0.0 # Linting rules for Flutter projects
 
-# Flutter-specific settings
 flutter:
   uses-material-design: true # Includes Material Design icons by default
 
-  # Define assets for your project. Uncomment to add custom assets like images.
+  # Optional assets configuration
   # assets:
-  #   - images/sample_image.png
+  #   - images/a_dot_burr.jpeg
 
-  # Define custom fonts for your project. Uncomment to add custom fonts.
+  # Custom fonts configuration (if needed)
   # fonts:
-  #   - family: MyCustomFont
+  #   - family: Schyler
   #     fonts:
-  #       - asset: fonts/MyCustomFont-Regular.ttf
-
-  # Any other configurations specific to Flutter.
+  #       - asset: fonts/Schyler-Regular.ttf
