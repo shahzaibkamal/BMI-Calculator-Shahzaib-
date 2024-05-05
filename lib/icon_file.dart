@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constantFile.dart';
 import 'container_file.dart';
-
 class RepeatedIcon extends StatelessWidget {
   RepeatedIcon({required this.iconData, required this.label, required Color color});
 

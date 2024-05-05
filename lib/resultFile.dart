@@ -68,7 +68,7 @@ class ResultScreen extends StatelessWidget {
                     style: klargeButtons,),
                 ),
 
-                color: Color(0xFFEB1555),
+                color: Color(0xFF770A2B),
                 margin: EdgeInsets.only(top: 10.0),
                 width: double.infinity,
                 height: 80.0,

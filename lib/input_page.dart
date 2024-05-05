@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_file.dart';
@@ -27,7 +25,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text('Body Mass Index Calculator'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,7 +68,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ContainerRepeated(
-              colors: Color(0xFF1D1E33),
+              colors: Color(0xFF0E6E0E),
               cardWidget: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -100,8 +98,8 @@ class _InputPageState extends State<InputPage> {
                     value: sliderHeight.toDouble(),
                     min: 120.0,
                     max: 220.0,
-                    activeColor: Color(0xFFEB1555),
-                    inactiveColor: Color(0xFF8D8E98),
+                    activeColor: Color(0xFF4B4949),
+                    inactiveColor: Color(0xD0EAE6E5),
                     onChanged: (double newValue) {
                       setState(() {
                         sliderHeight = newValue.round();
@@ -117,12 +115,12 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ContainerRepeated(
-                    colors: Color(0xFF111328),
+                    colors: Color(0xFF0E6E0E),
                     cardWidget: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget> [
                         Text(
-                          'WEIGHT',
+                          'Weight',
                           style: kLabelStyle,
                         ),
                         Text(
@@ -159,7 +157,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ContainerRepeated(
-                    colors: Color(0xFF111328),
+                    colors: Color(0xFF0E6E0E),
                     cardWidget: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget> [
@@ -224,7 +222,7 @@ class _InputPageState extends State<InputPage> {
                   style: klargeButtons,),
               ),
 
-              color: Color(0xFFEB1555),
+              color: Color(0xFF851E27),
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
               height: 80.0,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'container_file.dart';
 
 
-const activeColor = Color(0xFF393A5D);
-const deactiveColor = Color(0xFF111328);
+const activeColor = Color(0xFF0E6E0E);
+const deactiveColor = Color(0xFF8F1010);
 const kLabelStyle = TextStyle(
     fontSize: 30.0,
     color: Color(0xFF8D8E98)
